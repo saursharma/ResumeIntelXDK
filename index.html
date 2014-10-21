@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saurabh Sharma's Resume</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
+    
+    <link rel="stylesheet" type="text/css" href="appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="appframework/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="appframework/appframework.ui.min.js"></script>
+
+    <!-- Required if packaging to native app using Intel XDK -->    
+    <script src="intelxdk.js"></script>
+    <script src="xhr.js"></script>
+    <script>    
+        function onDeviceReady(){ 
+            $.ui.launch();
+            intel.xdk.device.hideSplashScreen();
+        }
+        document.addEventListener("intel.xdk.device.ready", onDeviceReady, false);
+    </script>
+    <!-- end Intel XDK code -->
+    
+    <script>   
+        $.ui.autoLaunch = false; 
+        $.ui.backButtonText = "Back";
+                
+        $(document).ready(function(){
+            $.ui.launch();
+        });
+    </script>
+    <style>
+        /* CSS responsive square grid */        
+        .grid-photo {margin:3px -7px;} 
+        .grid-photo:after {content:'';display:block;clear:both;}        
+        .grid-photo li {position: relative; display:block; float:left; width: 10%; padding-bottom: 10%;}
+        .grid-photo .grid-photo-box {position: absolute;left: 3px;right: 3px;top: 8px;bottom: 8px;} 
+        .grid-photo img {width:60%;height:60%}
+        @media only screen and (max-width : 1024px) {
+            .grid-photo li {width: 12.5%; padding-bottom: 12.5%;}        
+        }        
+        @media only screen and (max-width : 768px) {
+            .grid-photo li {width: 16.6%; padding-bottom: 16.6%;}        
+        }        
+        @media only screen and (max-width : 480px) {
+            .grid-photo li {width: 45%; padding-bottom: 25%;}        
+        }
+        @media only screen and (max-width : 320px) {
+            .grid-photo li {width: 33.3%; padding-bottom: 33.3%;}        
+        }   
+    </style>    
+</head>
+<body> 
+    <div id="afui">
+        <div id="content" style="">
+            
+        <!--Grid View Page-->
+        <div class="panel" title="Title" id="gridview" selected="true">
+            <header>
+                <h1>Saurabh Sharma</h1>
+                <a href="#backpage" data-transition="flip" class="button icon lamp" style="float:right"></a>
+            </header>
+            <br/>
+            <center><img src="assets/saurabh.png" height="160px"/></center><br/>
+            <i>Dream as if you'll live forever. Live as if you'll die today ~ James Dean</i>
+            <br/><br/>
+            <div class="grid-photo">
+                <li><div class="grid-photo-box">
+                    <center><a href="#professional"><img src="assets/professional.png" height="10px!important"/></a></center>
+                </div></li>
+                <li><div class="grid-photo-box"><center><a href="#educational"><img src="assets/education.png" /></a></center></div></li><br/>
+            </div><br/>
+            <div class="grid-photo">
+                <li><div class="grid-photo-box"><center><a href="#personal"><center><img src="assets/personal.png" /></a></center></div></li>
+                <li><div class="grid-photo-box"><center><a href="#contact"><center><img src="assets/contact.png" /></a></center></div></li>
+            </div>   
+        </div>
+            
+        <!-- back panel -->
+        <div class="panel" title="Settings" id="backpage"  data-footer="none">
+            <header>
+                <h1>Settings</h1>
+                <a onclick="$.ui.goBack();" data-transition="flip" class="button icon close" style="float:right"></a>
+            </header>
+            <ul class="list inset" id="settingsList">
+                <li>
+                    <h1> Why I developed this app??</h1> <br/><br/>
+                    <p>Well I often came across question like <br/>
+                    Do you have knowledge about Hybrid apps? <br/>
+                    Candidates with app published on Play Store will be given preference... :P <br/>
+                    and so on..<br/>
+                    So, I thought why shouldn't I make my resume as app and publsih it.. :)
+                    
+                    </p>
+                    <label>Did you liked the idea?</label>
+                    <input id="toggle1" type="checkbox" name="toggle1" value="1" class="toggle" checked>
+                    <label style="left:70%" for="toggle1" data-on="Yes" data-off="No"><span></span></label>
+                </li>
+            </ul> 
+        </div>
+            
+        <!--Detail View Pages for each grid items-->
+        <div class="panel" title="Professional Synopsis" id="professional">
+            <ul class="list">
+                <li><a href="#current">Current Company</a></li>
+                <li><a href="#previous">Previous Employers</a></li>
+                <li><a href="#internships">Internships Undertaken</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul><br/>
+        </div>
+            
+        <div class="panel" title="Current Employer" id="current" data-footer="none"><br/><br/>
+            <p style="font-size: 17px;">
+                <center><img src="assets/google.png" width="180px;"/></center><br/>
+                <b>Designation</b>: Specialist- Tools Development <br/><br/>
+                <b>Company</b>: Google India (through vendor 'Binary Semantics')<br/><br/>
+                <b>Location</b>: Gurgaon <br/><br/>
+                <b>Office Address</b>: <br/><br/>
+                <b>Email ID</b>: saursharma@google.com <br/><br/>
+                <b>Joined on</b>: 27th August, 2012 <br/><br/><br/>
+                <h2>Projects:</h2>
+                Project: Widgets Development for Blogger<br/>
+                Widgets are HTML/JavaScript plugins to provide additional functionalities to users.<br/>
+                Technologies Involved: Widgets API, XML, JavaScript, Closure, JFK, JAVA, Wikipedia API, Google Picker, G+ integration <br/>
+                Description: Worked as Technical Consultant to develop and maintain Widgets for Blogger, CMS for bloggers by Google. Developed and launched Wikipedia widget for Blogger. Currently, widget have more than 80k users. Received performance award in Q4, 2012 for the same. Worked on few other widgets which are under testing phase and to be launched soon. Fixed bugs in existing widgets like Link list, G+ followers etc. <br/><br/>
+            
+                Project: Plugin Development for Blogger<br/>
+                Plugins are tools interacting with data store of Blogger to provide seamless data access to users. <br/>
+                Technologies Involved: JAVA , JAVA interfaces, XML, JavaScript, Closure, JFK, Feed API, Kennedy specs <br/>
+                Description: Developed new plugins which fetches userPrefs and PostsInfo from blogger data store and provide interface to be used in widgets. <br/><br/>
+            
+                Project: UI/UX development of Blogger <br/>
+                Technologies Involved: Blogger Schema, XML, JavaScript, Closure, JFK, JAVA, Google Picker<br/>
+                Description: Worked on improvement of User Interface of Blogger. Contributed to new themes. Worked on few new features like contact picker, new layouts for existing widget etc.<br/><br/>
+            
+                Project: Robocop <br/>
+                Internal security project of Google to help QA in analyzing ads served on a webpage. <br/>
+                Technologies Involved: Chrome extension API (devtools.network, permissions, runtime, storage), AngularJS, Google App Engine, Python 
+                <br/>Description: Developed a chrome extension that analyze the network calls and generate report based on their protocol status, cross domain request status and security certificate. Project has a python backend hosted on Google App Engine to perform the background tasks.<br/><br/> 
+
+                Project: Internal resource sharing <br/>
+                Web App to help employees in sharing useful resources with each-other. <br/>
+                Technologies Involved: Python, Jinja, Google App Engine, NDB<br/>
+                Description: It was a pet project to help teams at Google to share resources like study documents, reference links etc. with each other. It was a web app hosted on Google App Engine.
+            </p>
+        </div>
+            
+        <div class="panel" title="Previous Employers" id="previous">
+            <br/>
+            <p>Well, this is my first job as I completed my engineering in 2012 only. But worked with one startup for short span of time.<br/><br/><br/>
+            <b>Duration:</b> June 2012 – Aug 2012 <br/><br/>
+            <b>Company:</b>iManiac Technologies, Gurgaon <br/><br/>
+            <b>Role:</b> Worked with iManiac Technologies core team to setup a website and android development team. Recruited website and android development interns. Streamlined workflow and code review process with open source tools like GIT, Gerrit etc. Helped in developing resource material like hosting private repo on BitBucket (Free alternative of Github) etc.
+            </p>
+        </div>
+        
+        <div class="panel" title="Internships Undertaken" id="internships">
+            <br/>
+            <h1>Deloitte Haskins and Sells</h1><br/>
+            <p>Worked as Intern in Internal Audit Team as a part of Enterprise Risk Services Practice.
+            Stock audited the retail stores of Guardian Life Care Private Ltd., one of the leading retail
+            chain of health and wellness stores.</p> <br/> <br/>
+            
+            <h1>Cisco Networking Academy</h1><br/>
+            <p>Training undergone under Cisco Networking Academy at Bharti Vidyapeeth’s College of
+            Engineering. Completed all 4 modules of CCNA certification and learned about basic
+            networking fundamentals, routing protocols and concepts, LAN switching and wireless &
+            accessing the WAN.</p> <br/> <br/>
+        </div>
+        
+        <div class="panel" title="Skills" id="skills">
+            <br/>
+            <h2>Skills: </h2> 
+            <ul>
+                <li>JavaScript</li> 
+                <li>AngularJS</li> 
+                <li> Closure</li> 
+                <li> JFK</li> 
+                <li> jQuery</li> 
+                <li> impressJS</li> 
+                <li> BootStrap</li> 
+                <li> HTML5, CSS3</li> 
+                <li> PHP, Python</li> 
+                <li> OOPS Concepts</li>
+            </ul><br/>
+            <hr/>
+            <h2>Knowledge: </h2>
+            <ul>
+                <li>Hybrid Apps</li>
+                <li>MVC Architecture</li> 
+                <li> Blogger Widgets API</li> 
+                <li> Wikipedia API</li> 
+                <li> Google Picker</li> 
+                <li> Google App Engine</li> 
+                <li> NDB CITC</li> 
+                <li> Perforce</li> 
+                <li> Critique (Mondarian)</li> 
+                <li> Dynamic Web Portals</li> 
+                <li> Creating HTML pages</li> 
+                <li> Database Maintenance Ubuntu</li> 
+            </ul> <br/>
+            <hr/>
+            <h2>Tools: </h2>
+            <ul>
+                 <li>Intel XDK </li> 
+                <li>Batarang </li> 
+                <li> Xampp/ Wampp</li> 
+                <li> Geany </li> 
+                <li>Eclipse </li> 
+                <li>Cider</li> 
+            </ul>
+        </div>
+        
+        <div class="panel" title="Award" id="awards">
+            <br/>
+            <center><img src="assets/Awards.png"/></center><br/>
+            Won Best Performance award for Q4, 2012 from Binary Semantics while working at Google.
+        </div>
+        
+        <div class="panel" title="Educational Qualification" id="educational">
+            <ul class="list">
+                <li><a href="#engineering">Engineering</a></li>
+                <li><a href="#certification">Certifications</a></li>
+                <li><a href="#schooling">Schooling</a></li>
+                <li><a href="#research">Research Papers</a></li>
+                <li><a href="#leadership">Leadership Positions</a></li>
+            </ul>
+        </div>
+        
+        <div class="panel" title="Engineering" id="engineering">
+            <br/><br/><br/><br/><br/>
+            <center><img src="assets/bvcoe.png"/></center><br/><br/>
+            <center>
+                B.Tech <br/>
+                <b>Specialization: </b> Computer Science <br/>
+                <b>Duration: </b>Aug, 2008 – June,2012< br/>
+                <b>College: </b>BVCOE, New Delhi <br/>
+                <b> University:</b> GGSIP University <br/>
+                <b>Precentage: </b>72.2%
+            </center>
+        </div>
+        
+        <div class="panel" title="Certification" id="certification">
+            <br/><br/><br/><br/><br/>
+            <center><img src="assets/dms.png" width="80%"/></center><br/><br/>
+            <center>
+                Certificate in Enterprise Management <br/>
+                <b>Duration: </b>June, 2011 – Sept,2011<br/>
+                <b>Department: </b>Department of Management Studies <br/>
+                <b> College:</b> Indian Institute of Technology, Delhi <br/>
+            </center>
+        </div>
+        
+        <div class="panel" title="Schooling" id="schooling">
+            <br/><br/><br/><br/><br/>
+            <center><img src="assets/sdav.gif" width="80%"/></center><br/><br/>
+            <center>
+                High School <br/>
+                <b>Duration: </b>April, 2005 – March 2006<br/>
+                <b>School: </b>SDAV, Gurgaon <br/>
+                <b> Board:</b> CBSE <br/>
+                <b>Precentage: </b>87.4% <br/>
+            </center> <br/>
+            
+            <center>
+                Intermediate <br/>
+                <b>Duration: </b>April, 2007 – March 2008<br/>
+                <b>School: </b>SDAV, Gurgaon <br/>
+                <b> Board:</b> CBSE <br/>
+                <b>Precentage: </b>84.7% <br/>
+            </center> <br/>
+        </div>
+        
+        <div class="panel" title="Research Papers" id="research">
+            <br/>
+            <b>Paper Title:</b>“Corporate Social Responsibility (CSR) Transforming Supply Chains” <br/>
+            <b>Conference Host: </b>IIT, Roorkee<br/>
+            <b>Year: </b>2013<br/><br/>
+            
+            <b>Paper Title:</b>“Moving Object Detection” <br/>
+            <b>Conference Host: </b>DTU, New Delhi<br/>
+            <b>Year: </b>2012<br/><br/>
+            
+            <b>Paper Title:</b>“System Performance Optimization Using Overclocking” <br/>
+            <b>Conference Host: </b>NIT Surat<br/>
+            <b>Year: </b>2011<br/><br/>
+            
+            <b>Paper Title:</b>“Cost Optimization in IT & Electronics Industry Using GSCM & Overclocking” <br/>
+            <b>Conference Host: </b>AIT Delhi<br/>
+            <b>Year: </b>2011<br/><br/>
+            
+            <b>Paper Title:</b>“Embedding Robotics & AI Using Hazard” <br/>
+            <b>Conference Host: </b>BVCOE, New Delhi<br/>
+            <b>Year: </b>2010<br/><br/>
+        </div>
+        
+        <div class="panel" title="Leadership Positions" id="leadership">
+            <ul><br/><br/>
+                <li>Founded & Served as Chairperson for BVP-ISTE, Student sub-chapter of ISTE of BVCOE (2011-12) </li><br/>
+                <li>Serced as Vice Chairperson for BVP Inc., Business club of BVCOE (2011-12) </li><br/>
+                <li>Was Student Convener for Entrepreneurship Development & Consultancy Cell of
+                BVCOE (2011-12) </li><br/>
+                <li>Worked as nF Ambassador (Marketing) and Social Media Marketing for ngoFuel.org (2010-12)</li><br/>
+                <li>Acted as Core Convener in Evoluzione, Technical Fest of BVP-ISTE (2012) </li><br/>
+                <li>Acted as Managing Director (Logistics) in Corprova’12, Business fest of BVP-Inc. (2012) </li><br/>
+                <li>Organized E-Summit in CORPROVA’11 at BVCOE, New Delhi (2011) </li><br/>
+                <li> Acted as Campus Ambassador for Freshersworld.com (2009-10) </li><br/>
+                <li>Acted as Campus Representative at Sportskeeda.com (2009-10) </li><br/>
+                <li>Acted as Website Team Head for the College Cyber Society – The Net Freaks (2009-10) </li><br/>
+                <li>Acted as Website Code Widget for the College Arts Society – Srijan (2009-10) </li><br/>
+                <li>Acted as coordinator for TRACE THE MAZE (Robotics) at FERVOUR'09 and INDIAN POLITICAL LEAGUE at CORPROVA'09, both organized at                           BVCOE, New Delhi.</li>
+            </ul>
+        </div>
+            
+        <div class="panel" title="Personal Information" id="personal">
+            <ul class="list">
+                <li><a href="#about">Brief Intro</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#extra">Extra Curricular activities</a></li>
+            </ul>
+        </div>
+        
+        <div class="panel" title="Brief Intro" id="about">
+            <br/><br/>
+            I belong to very small village in outskirts of Gurgaon. Surrounded by Aravali hills, my home provide but respite from noise and               pollution of the city. Though now conditions have improved a lot, but in childhood we faced a lot of problems due to connectivity             issues. I belong to a middle class family with both the parents in education field.
+        </div>
+        
+        <div class="panel" title="Hobbies" id="hobbies">
+            <br/><br/>
+            I am quite introvert and I rarely indulged in outdoor activities after childhood. And No, I don't like cricket. But there are few             things that give me immense satisfaction like: <br/><br/>
+            <h2>Biking:</h2>
+            Whenever I feel stressed, the best stress buster for me is riding my bike on a long Highway. I prefer cruisers and own Avenger               right now. But yes, someday I will replace it with more powerful Superbike. :)
+            <br/>
+            <h2>Travelling:</h2>
+            Yes, I like travelling a lot. But I prefer to avoid crowded places specially tourist spaces with flocks of people where you feel             like in middle of a market. I prefer places with low connectivity where I feel close to nature like McLeodGanj.
+        </div>
+        
+        <div class="panel" title="Extra Curricular activities" id="extra">
+            <br/><br/><ul>
+              <li>Stood I in Techno vision (TPP) at Troika organized at DTU, Delhi (2012) </li><br/>
+              <li>Qualified GATE (Computer Science & Engineering) conducted by IITs (2011)</li><br/>
+              <li>Stood III in Envisage at MINDBEND organized at SVNIT, Surat (2011)</li><br/>
+              <li>Stood II position in TPP at PROSCENIUM organized at AIT, Delhi (2011)</li><br/>
+              <li>Completed CCNA (Cisco Certification: Level 4) Certification in Networking (2010)</li><br/>
+              <li>Stood I in CAVITY (Robotics) & INTERLOPER (Robotics) and II in ONLINE CODE
+                  CHALLENGE at HERTZ organized at BVCOE, New Delhi (2009)</li><br/>
+              <li>Stood II in F1 RACING (Robotics) at TECHSURGE'09 organized at MAIT, Rohini (2009)</li><br/>
+              <li>Stood II in ROBORACE (Robotics) at TECHFEST organized at IGIT, Delhi by CSI Student
+                  Branch (2009)</li><br/>
+              <li>Stood II in ROBOWARS (Robotics) and IV in CARNAGE (Robotics) at INNOVISION'08
+                  organized at NSIT, Dwarka (2008)</li><br/>
+              <li>Awarded gold medal in National Science Olympiad for achievements in educational field.
+           </ul>
+        </div>
+        
+        
+        
+        <div class="panel" title="Contact Me" id="contact">
+            <br/>
+            Thanks for your interest !!! <br/>
+            You can choose any of the method from the tabs. :)
+            <!--Footer with Tabs or Navigation bar -->
+            <div id="navbar" style="width:1450px;">
+                <a href="#callPage" id='call' data-transition="none">Call/Mail</a>
+                <a href="#socialPage" id='social' data-transition="none">Social</a>
+                <a href="#messagePage" id='message' data-transition="none">Message</a>
+            </div>
+        </div>
+        
+        <div class="panel" title="Contact Me" id="callPage" data-tab="call">
+            Contact No.: <br/><br/>
+            +91-9873390875 <br/>
+            +91-9717488708 <br/><br/><br/>
+             Email ID: <br/>
+            sharma.saurabh114@gmail.com
+            <div id="navbar" style="width:1450px;">
+                <a href="#callPage" id='call' data-transition="none">Call/Mail</a>
+                <a href="#socialPage" id='social' data-transition="none">Social</a>
+                <a href="#messagePage" id='message' data-transition="none">Message</a>
+            </div>
+        </div>
+        
+        <div class="panel" title="Contact Me" id="socialPage" data-tab="social">
+            <br/><br/>
+            <a href="www.facebook.com/sharma.saurabh114">Facebook</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://plus.google.com/u/0/+SaurabhSharma114">G+</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#">LinkedIn</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <br/><br/>
+            <a href="#">Twitter</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#">GitHub</a>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            
+            
+            <div id="navbar" style="width:1450px;">
+                <a href="#callPage" id='call' data-transition="none">Call/Mail</a>
+                <a href="#socialPage" id='social' data-transition="none">Social</a>
+                <a href="#messagePage" id='message' data-transition="none">Message</a>
+            </div>
+        </div>
+        
+        <div class="panel" title="Contact Me" id="messagePage" data-tab="message">
+            <!-- Register View -->
+            <div style="text-align:center">
+                <br>
+                <br>
+                <p>Please fill all the details</p>
+                <br>
+                <br>
+            </div>
+            <input name="name" type="text" placeholder="Name" />
+            <input name="email" type="text" placeholder="Email" />
+            <input name="phone" type="text" placeholder="Contact No." />
+            <input name="message" type="text" placeholder="Enter your message here.." />
+            <a class="button block green" href="#" id="register">Connect</a>
+            
+            <div id="navbar" style="width:1450px;">
+                <a href="#callPage" id='call' data-transition="none">Call/Mail</a>
+                <a href="#socialPage" id='social' data-transition="none">Social</a>
+                <a href="#messagePage" id='message' data-transition="none">Message</a>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+</body>
+</html>    
